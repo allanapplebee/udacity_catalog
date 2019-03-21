@@ -27,12 +27,12 @@ catagory2 = Catagory(name="Football")
 session.add(catagory2)
 session.commit()
 
-item1 = Item(description="Nice balls", title="Balls", catagory=catagory2)
-session.add(item1)
+item3 = Item(description="Nice balls", title="Balls", catagory=catagory2)
+session.add(item3)
 session.commit()
 
-item2 = Item(description="Nice gloves", title="Glovess", catagory=catagory2)
-session.add(item1)
+item4 = Item(description="Nice gloves", title="Glovess", catagory=catagory2)
+session.add(item4)
 session.commit()
 
 print("Added cats and items")

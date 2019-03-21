@@ -15,10 +15,10 @@ session = DBSession()
 @app.route('/api/catagories/<int:catagory_id>/items/json')
 def catagoryItemsJSON(catagory_id):
     catagory = session.query(Catagory).filter_by(id=catagory_id).one()
-    items = session.query(Item).filter_by(catagory_id=catagory.id)
+    items = session.query(Item).filter_by(cat_id=catagory.id)
     return jsonify(Items=[i.serialize for i in items])
 
 if __name__ == '__main__':
-    app.secret_key = 'Puppies_puppies_puppies'
-    app.debug = True
+    # app.secret_key = 'Puppies_puppies_puppies'
+    #app.debug = True
     app.run(host = '0.0.0.0', port = 8000)
