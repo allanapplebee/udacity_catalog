@@ -31,7 +31,7 @@ item3 = Item(description="Nice balls", title="Balls", catagory=catagory2)
 session.add(item3)
 session.commit()
 
-item4 = Item(description="Nice gloves", title="Glovess", catagory=catagory2)
+item4 = Item(description="Nice football gloves", title="Football Gloves", catagory=catagory2)
 session.add(item4)
 session.commit()
 
