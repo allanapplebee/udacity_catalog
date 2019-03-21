@@ -18,6 +18,13 @@ class Catagory(Base):
         primary_key = True
     )
 
+    @property
+    def serialize(self):
+        return {
+            'name': self.name,
+            'id': self.id
+        }
+
 class Item(Base):
     __tablename__ = 'item'
     
@@ -37,10 +44,15 @@ class Item(Base):
         String(50),
         nullable = False
     )
-
     catagory = relationship(Catagory)
 
-    #TODO: add serialisation for JSON
+    @property
+    def serialize(self):
+        return {
+            'description': self.description,
+            'id': self.id,
+            'title': self.title
+        }
 
 
 engine = create_engine('sqlite:///catalog.db')
